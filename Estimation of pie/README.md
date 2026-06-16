@@ -4,63 +4,73 @@ This project uses a **Monte Carlo simulation** to estimate the value of **π** t
 
 ## Overview
 
-A unit square of side length **1** contains a quarter circle of radius **1**. Random points are generated uniformly inside the square. By calculating the proportion of points that fall inside the quarter circle, the value of π can be approximated.
+Imagine a **unit square** (side length = 1) containing a **quarter circle** of radius 1.
+
+Random points are generated inside the square. By observing how many of these points fall inside the quarter circle, we can estimate the value of π.
+
+---
 
 ## Mathematical Idea
 
-For a quarter circle of radius 1:
+### Step 1: Calculate the areas
 
-* Area of quarter circle:
+For a circle of radius **1**:
 
-  [
-  \frac{\pi r^2}{4} = \frac{\pi}{4}
-  ]
+* Area of the full circle = `π × 1² = π`
+* Area of the quarter circle = `π / 4`
 
-* Area of square:
+For the unit square:
 
-  [
-  1 \times 1 = 1
-  ]
+* Area of the square = `1 × 1 = 1`
 
 Therefore,
 
-[
-\frac{\text{Area of Quarter Circle}}{\text{Area of Square}} = \frac{\pi}{4}
-]
+```text
+Area of Quarter Circle / Area of Square = π / 4
+```
 
-Since randomly generated points are uniformly distributed within the square,
+---
 
-[
-\frac{\text{Points Inside Quarter Circle}}{\text{Total Points}} \approx \frac{\pi}{4}
-]
+### Step 2: Relate areas to random points
 
-which gives:
+If random points are distributed uniformly inside the square, then:
 
-[
-\pi \approx 4 \times \frac{\text{Points Inside Quarter Circle}}{\text{Total Points}}
-]
+```text
+Points Inside Quarter Circle / Total Points ≈ π / 4
+```
+
+Rearranging,
+
+```text
+π ≈ 4 × (Points Inside Quarter Circle / Total Points)
+```
+
+---
 
 ## Algorithm
 
-1. Generate random points ((x, y)) where:
+1. Generate random points `(x, y)` such that:
 
-   [
-   0 \le x \le 1,\quad 0 \le y \le 1
-   ]
+   ```text
+   0 ≤ x ≤ 1
+   0 ≤ y ≤ 1
+   ```
 
 2. Check whether the point lies inside the quarter circle:
 
-   [
-   x^2 + y^2 \le 1
-   ]
+   ```text
+   x² + y² ≤ 1
+   ```
 
 3. Count the number of points inside the quarter circle.
 
 4. Estimate π using:
 
-   [
-   \pi \approx 4 \times \frac{\text{Inside Points}}{\text{Total Points}}
-   ]
+   ```text
+   π ≈ 4 × (Inside Points / Total Points)
+   ```
+
+---
 
 ## Sample Output
 
@@ -70,9 +80,15 @@ Enter the number of trials: 1000000
 Estimated value of π: 3.141872
 ```
 
+---
+
 ## Results
 
-As the number of trials increases, the estimate becomes increasingly accurate. This behavior demonstrates the **Law of Large Numbers**, where experimental results converge toward theoretical values with larger sample sizes.
+As the number of trials increases, the estimate becomes more accurate.
+
+This behavior illustrates the **Law of Large Numbers**, where experimental results converge toward their theoretical values as the sample size grows.
+
+---
 
 ## Concepts Explored
 
@@ -82,13 +98,18 @@ As the number of trials increases, the estimate becomes increasingly accurate. T
 * Estimation of Mathematical Constants
 * Law of Large Numbers
 
+---
+
 ## Technologies Used
 
 * Python
 * Matplotlib
 * `random` module
 
+---
+
 ## Key Takeaway
 
-> Monte Carlo methods show that randomness can be used to estimate deterministic quantities such as π with remarkable accuracy.
+> Randomness can be used to estimate deterministic mathematical constants.
 
+Through repeated random experiments, Monte Carlo methods provide an elegant computational approach to approximating values such as **π**, while also demonstrating fundamental principles of probability and statistics.

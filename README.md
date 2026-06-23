@@ -2,7 +2,7 @@
 
 Monte Carlo Probability Explorer is a collection of probability simulations designed to investigate fundamental concepts in probability and statistics through computational experiments. Using repeated random sampling, these simulations provide intuitive insights into convergence, estimation, and counterintuitive probabilistic phenomena.
 
-## Simulations Included
+## Simulations Included : 
 
 This repository contains a series of Monte Carlo experiments exploring a variety of probability concepts:
 
